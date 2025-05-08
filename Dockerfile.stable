@@ -1,7 +1,11 @@
-FROM golang:1.23.1
+FROM golang:1.23.5
+
 
 # COPY source destination
 COPY . /bin/myapp
+WORKDIR /bin/myapp
+
+RUN go build -o myapp
 
 CMD ["/bin/myapp"]
 
